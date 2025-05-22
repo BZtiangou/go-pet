@@ -1,0 +1,361 @@
+#waifu-toggle {
+  background-color: #3388bb;
+  border-radius: 5px;
+  bottom: 66px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  left: 0;
+  margin-left: -100px;
+  padding: 5px 2px 5px 5px;
+  position: fixed;
+  transition: margin-left 1s;
+  width: 60px;
+  writing-mode: vertical-rl;
+}
+
+#waifu-toggle.waifu-toggle-active {
+  margin-left: -50px;
+}
+
+#waifu-toggle.waifu-toggle-active:hover {
+  margin-left: -30px;
+}
+
+#waifu {
+  bottom: -100px;
+  left: -40px;
+  line-height: 0;
+  margin-bottom: 0px;
+  position: fixed;
+  transform: translateY(0px);
+  transition: transform 0.3s ease-in-out, bottom 3s ease-in-out;
+  z-index: 1;
+}
+
+#waifu:hover {
+  transform: translateY(-5px);
+}
+
+#waifu-tips {
+  animation: shake 50s ease-in-out 5s infinite;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 9px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px;
+  font-size: 14px;
+  line-height: 24px;
+  margin: -30px 30px;
+  min-height: 86px;
+  opacity: 0;
+  overflow: hidden;
+  padding: 8px 8px;
+  position: absolute;
+  text-overflow: ellipsis;
+  transition: opacity 1s;
+  width: 240px;
+  word-break: break-all;
+  top: 0px;
+  left: 20px;
+  pointer-events: none;
+}
+
+#waifu-tips.waifu-tips-active {
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+#waifu-tips span {
+  color: #3388bb;
+}
+
+#live2d {
+  cursor: grab;
+  height: 400px;
+  position: relative;
+  width: 400px;
+}
+
+#live2d:active {
+  cursor: grabbing;
+}
+
+#waifu-tool {
+  color: #aaa;
+  opacity: 0;
+  position: absolute;
+  right: 100px;
+  top: 60px;
+  transition: opacity 1s;
+}
+
+#waifu:hover #waifu-tool {
+  opacity: 1;
+}
+
+#waifu-tool span {
+  display: block;
+  height: 40px;
+  text-align: center;
+}
+
+#waifu-tool svg {
+  fill: #7b8c9d;
+  cursor: pointer;
+  height: 24px;
+  transition: fill 0.3s;
+}
+
+#waifu-tool svg:hover {
+  fill: #3388bb;
+  /* #34495e */
+}
+
+@keyframes shake {
+  2% {
+    transform: translate(0.5px, -1.5px) rotate(-0.5deg);
+  }
+
+  4% {
+    transform: translate(0.5px, 1.5px) rotate(1.5deg);
+  }
+
+  6% {
+    transform: translate(1.5px, 1.5px) rotate(1.5deg);
+  }
+
+  8% {
+    transform: translate(2.5px, 1.5px) rotate(0.5deg);
+  }
+
+  10% {
+    transform: translate(0.5px, 2.5px) rotate(0.5deg);
+  }
+
+  12% {
+    transform: translate(1.5px, 1.5px) rotate(0.5deg);
+  }
+
+  14% {
+    transform: translate(0.5px, 0.5px) rotate(0.5deg);
+  }
+
+  16% {
+    transform: translate(-1.5px, -0.5px) rotate(1.5deg);
+  }
+
+  18% {
+    transform: translate(0.5px, 0.5px) rotate(1.5deg);
+  }
+
+  20% {
+    transform: translate(2.5px, 2.5px) rotate(1.5deg);
+  }
+
+  22% {
+    transform: translate(0.5px, -1.5px) rotate(1.5deg);
+  }
+
+  24% {
+    transform: translate(-1.5px, 1.5px) rotate(-0.5deg);
+  }
+
+  26% {
+    transform: translate(1.5px, 0.5px) rotate(1.5deg);
+  }
+
+  28% {
+    transform: translate(-0.5px, -0.5px) rotate(-0.5deg);
+  }
+
+  30% {
+    transform: translate(1.5px, -0.5px) rotate(-0.5deg);
+  }
+
+  32% {
+    transform: translate(2.5px, -1.5px) rotate(1.5deg);
+  }
+
+  34% {
+    transform: translate(2.5px, 2.5px) rotate(-0.5deg);
+  }
+
+  36% {
+    transform: translate(0.5px, -1.5px) rotate(0.5deg);
+  }
+
+  38% {
+    transform: translate(2.5px, -0.5px) rotate(-0.5deg);
+  }
+
+  40% {
+    transform: translate(-0.5px, 2.5px) rotate(0.5deg);
+  }
+
+  42% {
+    transform: translate(-1.5px, 2.5px) rotate(0.5deg);
+  }
+
+  44% {
+    transform: translate(-1.5px, 1.5px) rotate(0.5deg);
+  }
+
+  46% {
+    transform: translate(1.5px, -0.5px) rotate(-0.5deg);
+  }
+
+  48% {
+    transform: translate(2.5px, -0.5px) rotate(0.5deg);
+  }
+
+  50% {
+    transform: translate(-1.5px, 1.5px) rotate(0.5deg);
+  }
+
+  52% {
+    transform: translate(-0.5px, 1.5px) rotate(0.5deg);
+  }
+
+  54% {
+    transform: translate(-1.5px, 1.5px) rotate(0.5deg);
+  }
+
+  56% {
+    transform: translate(0.5px, 2.5px) rotate(1.5deg);
+  }
+
+  58% {
+    transform: translate(2.5px, 2.5px) rotate(0.5deg);
+  }
+
+  60% {
+    transform: translate(2.5px, -1.5px) rotate(1.5deg);
+  }
+
+  62% {
+    transform: translate(-1.5px, 0.5px) rotate(1.5deg);
+  }
+
+  64% {
+    transform: translate(-1.5px, 1.5px) rotate(1.5deg);
+  }
+
+  66% {
+    transform: translate(0.5px, 2.5px) rotate(1.5deg);
+  }
+
+  68% {
+    transform: translate(2.5px, -1.5px) rotate(1.5deg);
+  }
+
+  70% {
+    transform: translate(2.5px, 2.5px) rotate(0.5deg);
+  }
+
+  72% {
+    transform: translate(-0.5px, -1.5px) rotate(1.5deg);
+  }
+
+  74% {
+    transform: translate(-1.5px, 2.5px) rotate(1.5deg);
+  }
+
+  76% {
+    transform: translate(-1.5px, 2.5px) rotate(1.5deg);
+  }
+
+  78% {
+    transform: translate(-1.5px, 2.5px) rotate(0.5deg);
+  }
+
+  80% {
+    transform: translate(-1.5px, 0.5px) rotate(-0.5deg);
+  }
+
+  82% {
+    transform: translate(-1.5px, 0.5px) rotate(-0.5deg);
+  }
+
+  84% {
+    transform: translate(-0.5px, 0.5px) rotate(1.5deg);
+  }
+
+  86% {
+    transform: translate(2.5px, 1.5px) rotate(0.5deg);
+  }
+
+  88% {
+    transform: translate(-1.5px, 0.5px) rotate(1.5deg);
+  }
+
+  90% {
+    transform: translate(-1.5px, -0.5px) rotate(-0.5deg);
+  }
+
+  92% {
+    transform: translate(-1.5px, -1.5px) rotate(1.5deg);
+  }
+
+  94% {
+    transform: translate(0.5px, 0.5px) rotate(-0.5deg);
+  }
+
+  96% {
+    transform: translate(2.5px, -0.5px) rotate(-0.5deg);
+  }
+
+  98% {
+    transform: translate(-1.5px, -1.5px) rotate(-0.5deg);
+  }
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+#model-selection-panel,
+#texture-selection-panel {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  width: 200px;
+  height: auto;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  display: block;
+  column-count: 3;
+  column-gap: 5px;
+}
+
+#model-selection-panel button,
+#texture-selection-panel button {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 5px;
+}
+
+#model-selection-panel button:hover,
+#texture-selection-panel button:hover {
+  background: #e0e0e0;
+}
+
+#model-selection-panel button img,
+#texture-selection-panel button img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
