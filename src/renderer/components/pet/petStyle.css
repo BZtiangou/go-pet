@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.pet-wrapper,
+.pet-wrapper * {
+  pointer-events: auto;
+}
+.pet-wrapper {
+  position: fixed;
+  z-index: 9999;
+  font-family: 'Press Start 2P', monospace;
+}
+
+/* 图 */
+.pet-img {
+  width: 150px;
+  transition: transform .2s;
+}
+.pet-img:hover {
+  transform: scale(1.05);
+}
+
+/* 控件列 */
+.ctrl-col {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 80px;
+}
+.ctrl-col.left .circle,
+.ctrl-col.left .icon {
+  align-self: flex-end;
+}
+
+/* 按钮基础 */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000, -2px -2px 0 #000 inset;
+  text-shadow: none;
+  transition: none;
+  image-rendering: pixelated;
+}
+.btn.rect   { width: 80px; height: 28px; border-radius: 4px; }
+.btn.circle { width: 28px; height: 28px; border-radius: 6px; }
+.btn.icon   { width: 28px; height: 28px; border-radius: 4px; font-size: 14px; line-height: 1; }
+
+/* 背景色 */
+.info-btn     { background: #FFD7BA; }
+.settings-btn { background: #f9a4bc; }
+.switch-btn   { background: #f9ad9c; }
+.dress-btn    { background: #D8E2DC; }
+.chat-btn     { background: #dadad7; }
+.other-btn    { background: #faf6dd; }
+.exit-btn     { background: #FCD5CE; }
+
+/* Hover */
+.btn:hover { filter: brightness(1.3); }
+
+/* Other 面板 */
+.panel {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px;
+  background: #FAE1DD;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000, -2px -2px 0 #000 inset;
+  border-radius: 4px;
+  image-rendering: pixelated;
+}
+.panel-item {
+  width: 80px;
+  height: 24px;
+  font-size: 10px;
+  color: #000;
+  background: #FEC89A;
+  border: 3px solid #000;
+  box-shadow: 1.5px 1.5px 0 #000, -1px -1px 0 #000 inset;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: none;
+  image-rendering: pixelated;
+}
+.panel-item:hover { filter: brightness(1.25); }
+
+/* 淡入淡出 */
+.fade-enter-active,
+.fade-leave-active { transition: opacity .2s; }
+.fade-enter-from,
+.fade-leave-to     { opacity: 0; }
