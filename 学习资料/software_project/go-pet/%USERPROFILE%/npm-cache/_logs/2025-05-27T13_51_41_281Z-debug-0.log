@@ -1,0 +1,36 @@
+0 verbose cli D:\node.js\node.exe D:\node.js\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v22.15.0
+3 silly config load:file:D:\node.js\node_modules\npm\npmrc
+4 silly config load:file:D:\学习资料\software_project\go-pet\.npmrc
+5 silly config load:file:C:\Users\86134\.npmrc
+6 silly config load:file:D:\node.js\global\etc\npmrc
+7 verbose title npm run dev
+8 verbose argv "run" "dev"
+9 verbose logfile logs-max:10 dir:D:\学习资料\software_project\go-pet\%USERPROFILE%\npm-cache\_logs\2025-05-27T13_51_41_281Z-
+10 verbose logfile D:\学习资料\software_project\go-pet\%USERPROFILE%\npm-cache\_logs\2025-05-27T13_51_41_281Z-debug-0.log
+11 silly logfile done cleaning log files
+12 verbose stack Error: Could not read package.json: Error: ENOENT: no such file or directory, open 'D:\学习资料\software_project\go-pet\package.json'
+12 verbose stack     at async open (node:internal/fs/promises:633:25)
+12 verbose stack     at async readFile (node:internal/fs/promises:1237:14)
+12 verbose stack     at async read (D:\node.js\node_modules\npm\node_modules\@npmcli\package-json\lib\read-package.js:9:18)
+12 verbose stack     at async PackageJson.load (D:\node.js\node_modules\npm\node_modules\@npmcli\package-json\lib\index.js:131:31)
+12 verbose stack     at async PackageJson.normalize (D:\node.js\node_modules\npm\node_modules\@npmcli\package-json\lib\index.js:117:5)
+12 verbose stack     at async #run (D:\node.js\node_modules\npm\lib\commands\run-script.js:86:13)
+12 verbose stack     at async RunScript.exec (D:\node.js\node_modules\npm\lib\commands\run-script.js:40:7)
+12 verbose stack     at async Npm.exec (D:\node.js\node_modules\npm\lib\npm.js:207:9)
+12 verbose stack     at async module.exports (D:\node.js\node_modules\npm\lib\cli\entry.js:74:5)
+13 error code ENOENT
+14 error syscall open
+15 error path D:\学习资料\software_project\go-pet\package.json
+16 error errno -4058
+17 error enoent Could not read package.json: Error: ENOENT: no such file or directory, open 'D:\学习资料\software_project\go-pet\package.json'
+18 error enoent This is related to npm not being able to find a file.
+18 error enoent
+19 verbose cwd D:\学习资料\software_project\go-pet
+20 verbose os Windows_NT 10.0.22631
+21 verbose node v22.15.0
+22 verbose npm  v10.9.2
+23 verbose exit -4058
+24 verbose code -4058
+25 error A complete log of this run can be found in: D:\学习资料\software_project\go-pet\%USERPROFILE%\npm-cache\_logs\2025-05-27T13_51_41_281Z-debug-0.log
