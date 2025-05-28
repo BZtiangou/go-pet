@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.achv-wrap {
+  position: fixed;
+  width: 600px;
+  height: 400px;
+  background-color: #FFEEDD;
+  border: 4px solid #000;
+  border-radius: 22px 22px 26px 26px;
+  box-shadow: 6px 6px 0 #000;
+  font-family: 'Press Start 2P', monospace;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: move;
+}
+
+.achv-wrap * { 
+  -webkit-app-region: no-drag; 
+}
+
+/* 顶部栏 ----------------------------------------------------------- */
+.top-bar {
+  display: flex;
+  gap: 8px; /* 增加组件之间的间距 */
+  align-items: center;
+  background-color: #cabfb3;
+  padding: 6px; /* 给顶部栏增加内边距 */
+  border-radius: 8px;
+}
+
+.btn.rect {
+  background-color: #ffab8ad2;
+  border: 3px solid #000;
+  box-shadow: 2px 2px 0 #000, -1px -1px 0 #000 inset;
+  font-size: 10px; /* 增加字体大小 */
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 8px; /* 增加圆角 */
+  transition: transform 0.2s, box-shadow 0.2s; /* 平滑动画效果 */
+}
+
+
+.btn.rect:hover{
+  transform: scale(1.02);
+  box-shadow: 2px 2px 0 #000, -2px -2px 0 #000 inset;
+}
+
+.pixel-frame:hover, .pixel-box:hover {
+  transform: scale(1.01);
+  box-shadow: 2px 2px 0 #000, -2px -2px 0 #000 inset;
+}
+
+.pixel-frame {
+  background-color: #ffe28ad2;
+  border: 3px solid #000;
+  box-shadow: 2px 2px 0 #000, -1px -1px 0 #000 inset;
+  font-size: 10px; /* 增加字体大小 */
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 8px; /* 增加圆角 */
+  transition: transform 0.2s, box-shadow 0.2s; /* 平滑动画效果 */
+}
+
+.pixel-box {
+  background-color: #ffa18ad2;
+  border: 3px solid #000;
+  box-shadow: 2px 2px 0 #000, -1px -1px 0 #000 inset;
+  font-size: 10px; /* 增加字体大小 */
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 8px; /* 增加圆角 */
+  transition: transform 0.2s, box-shadow 0.2s; /* 平滑动画效果 */
+}
+
+.arrow { 
+  font-size: 10px; /* 增大箭头 */
+  color: #333; 
+}
+
+/* 修改：change-icon的样式 */
+.change-icon {
+  width: 14px;
+  height: 14px;
+  margin-left: 6px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.change-icon:hover {
+  transform: scale(1.2);
+  color: #ec8f24;
+}
+
+/* 搜索按钮 */
+.search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* 固定宽度 */
+  height: 50px; /* 固定高度 */
+  cursor: pointer;
+  background-color: #ffffff; /* 按钮背景为白色 */
+}
+
+.search-btn:hover {
+  background-color: #c4b2b2; /* 鼠标悬停时改变背景色 */
+}
+
+.search-btn .icon.search {
+  width: 25px; /* 图标大小 */
+  height: 25px; /* 图标大小 */
+  color: #555;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.search-btn .icon.search:hover {
+  transform: scale(1.3);
+  color: #ffe5db; /* 改为亮橙色 */
+}
+
+/* 搜索弹窗 */
+.search-modal {
+  position: absolute;
+  left: 50%; top: 50%;
+  margin-left: -140px;
+  margin-top: -60px;
+  background: #FEC89A;
+  border: 3px solid #000;
+  box-shadow: 2px 2px 0 #000, -1px -1px 0 #000 inset;
+  border-radius: 12px;
+  padding: 12px;
+  width: 320px;
+  z-index: 10;
+}
+.search-box {
+  background: #FFD7BA;
+  border: 2px solid #000;
+  padding: 6px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+.search-box label {
+  display: block;
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+.search-input {
+  width: 100%;
+  padding: 4px;
+  font-family: inherit;
+  font-size: 10px;
+  border: 2px solid #000;
+  border-radius: 4px;
+}
+.search-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.search-buttons .btn {
+  width: 100px;
+}
+
+/* 搜索弹窗内部错误提示 */
+.error-msg {
+  color: #D92F2F;
+  font-size: 10px;
+  margin: 6px 0;
+  text-align: center;
+}
+
+/* 通用消息弹窗 */
+.msg-modal {
+  position: absolute;
+  top: 50%; left: 50%;
+  margin-top: -50px;
+  margin-left: -110px;
+  background-color: #FEC89A;
+  border: 3px solid #000;
+  box-shadow: 2px 2px 0 #000, -1px -1px 0 #000 inset;
+  border-radius: 12px;
+  padding: 12px;
+  width: 240px;
+  z-index: 10000;
+}
+.msg-content {
+  background-color: #FFD7BA;
+  border: 2px solid #000;
+  border-radius: 6px;
+  padding: 6px;
+  font-size: 10px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.msg-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.msg-buttons .btn {
+  width: 80px;
+}
+
+
+.char-slot { flex: 1; text-align: center; }
+
+.star-counter { min-width: 160px; }
+
+/* 主内容 ----------------------------------------------------------- */
+.content-area { 
+  flex: 1; 
+  display: flex; 
+  gap: 12px;
+  background-color: #FFEEDD;
+  overflow-y: auto; /* 添加竖向滚动 */
+}
+
+/* 左列 */
+.left-col { 
+  width: 150px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 8px; 
+  background-color: #FFEEDD;
+}
+
+.cat-title {
+  text-align: center;
+  background-color: #ffcb97;
+}
+
+.sel-title { 
+  cursor: pointer; 
+}
+
+.cat-scroll { 
+  flex: 1; 
+}
+
+.cat-item {
+  margin-bottom: 4px;
+  text-align: center;
+  font-size: 10px;
+  cursor: pointer;
+  background-color: #FFEEDD;
+}
+
+.cat-item:hover { filter: brightness(1.15); }
+
+/* 右列滚动区 */
+.right-col { 
+  flex: 1; 
+  background-color: #FFEEDD;
+  overflow-y: auto; /* 添加竖向滚动 */
+  padding-right: 20px; /* 给右边留出空间 */
+  border-right: 4px solid #ffd6b1; /* 添加边界线 */
+}
+
+/* 滑动条的样式 */
+.el-scrollbar__wrap {
+  border-radius: 12px;
+  border: 2px solid #FEC89A;
+  width: 12px; /* 滑动条宽度 */
+}
+
+/* 针对 el-scrollbar 组件的滚动条样式 */
+::v-deep .el-scrollbar__bar {
+  background-color: #febf87; /* 滑动条轨道颜色 */
+  border-radius: 12px;
+  width: 12px;
+}
+
+::v-deep .el-scrollbar__thumb {
+  background-color: #f4312e; /* 滑块颜色 */
+  border-radius: 12px;
+  width: 8px;
+  transition: background-color 0.2s ease;
+}
+
+::v-deep .el-scrollbar__thumb:hover {
+  background-color: #df2b10; /* 悬浮时滑块颜色 */
+}
+
+
+
+.achv-card {
+  background-color: #FFD7BA;
+  border: 3px solid #000;
+  padding: 8px;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.achv-card.done { 
+  background-color: #D8E2DC;
+}
+
+.icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.icon-circle img { 
+  width: 40px; 
+}
+
+.achv-info { 
+  flex: 1; 
+  font-size: 9px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 4px; 
+}
+
+.title { 
+  font-size: 11px; 
+}
+
+.progress-row { 
+  display: flex; 
+  align-items: center; 
+  gap: 4px; 
+}
+
+.label { 
+  flex: 0 0 auto; 
+}
+
+.prog-bar {
+  flex: 1; 
+  height: 10px; 
+  background-color: #E8E8E4; 
+  border: 2px solid #000; 
+  position: relative;
+}
+
+.fill {
+  position: absolute; 
+  top: 0; 
+  left: 0;
+  height: 100%; 
+  background-color: #FFF89A;
+}
+
+.reward-box {
+  min-width: 56px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  font-size: 10px;
+  position: relative;
+}
+
+.tick {
+  position: absolute; 
+  bottom: 2px; 
+  right: 4px; 
+  font-size: 12px;
+}
+
+/* 横向滚动行 */
+.badge-row, .costume-row {
+  display: flex; 
+  gap: 8px; 
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.milestone, .costume-item {
+  flex: 0 0 auto; 
+  padding: 6px 8px; 
+  background-color: #FEC89A;
+  border: 3px solid #000; 
+  font-size: 9px; 
+  cursor: pointer;
+}
+
+.milestone.achieved { 
+  background-color: #FFD7BA;
+}
+
+.milestone:hover, .costume-item:hover { 
+  filter: brightness(1.15); 
+}
+
+/* 关闭按钮 & 装饰 */
+.close-btn {
+  position: absolute; 
+  right: -5px; 
+  top: -10px;
+  width: 33px; 
+  height: 33px; 
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  background-color: #D8E2DC;
+  cursor: pointer;
+  font-size: 24px; /* 字符大小 */
+  font-weight: bold; /* 加粗 */
+  color: #333; /* 字体颜色 */
+  border: 3px solid #333; /* 边框颜色 */
+  transition: all 0.2s ease; /* 动画过渡 */
+}
+
+.close-btn:hover {
+  background-color: #f2906c; /* 悬停时的背景色 */
+  color: white; /* 悬停时字体变白 */
+  transform: scale(1.1); /* 鼠标悬停时放大 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* 强化阴影 */
+}
+
+.close-btn:active {
+  transform: scale(1); /* 点击时恢复原大小 */
+}
+
+
+.heart {
+  position: absolute; 
+  bottom: -40px; 
+  right: -30px;
+  font-size: 70px; 
+  color: #fdb49b;
+  pointer-events: none;
+  transform: rotate(-50deg); /* 更立体的角度 */
+  
+  /* 添加阴影来增强立体感 */
+  text-shadow: 
+  4px 4px 4px rgb(0, 0, 0),  /* 黑色阴影 */
+ 
+  0px 4px 6px rgb(0, 0, 0);  
+  
+}
+
+
+/* 新增：下拉组件和更多优化 */
+.sel-title.active { 
+  transform: rotate(180deg); 
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.icon {
+  width: 14px;
+  height: 14px;
+  margin-left: 6px;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  color: #444;
+}
+
+
+.stars-display {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+
+}
+
+.star {
+  color: rgba(255, 59, 15, 0.881);
+}
+
+
+
+

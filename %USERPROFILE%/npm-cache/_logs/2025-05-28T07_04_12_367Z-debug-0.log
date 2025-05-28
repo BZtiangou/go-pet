@@ -1,0 +1,19 @@
+0 verbose cli D:\node.js\node.exe D:\node.js\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v22.15.0
+3 silly config load:file:D:\node.js\node_modules\npm\npmrc
+4 silly config load:file:d:\学习资料\新的\go-pet\.npmrc
+5 silly config load:file:C:\Users\86134\.npmrc
+6 silly config load:file:D:\node.js\global\etc\npmrc
+7 verbose title npm view eslint-plugin-vue description dist-tags.latest homepage version time
+8 verbose argv "view" "--json" "--" "eslint-plugin-vue" "description" "dist-tags.latest" "homepage" "version" "time"
+9 verbose logfile logs-max:10 dir:d:\学习资料\新的\go-pet\%USERPROFILE%\npm-cache\_logs\2025-05-28T07_04_12_367Z-
+10 verbose logfile d:\学习资料\新的\go-pet\%USERPROFILE%\npm-cache\_logs\2025-05-28T07_04_12_367Z-debug-0.log
+11 silly logfile done cleaning log files
+12 http fetch GET 200 https://registry.npmmirror.com/eslint-plugin-vue 212ms (cache miss)
+13 verbose cwd d:\学习资料\新的\go-pet
+14 verbose os Windows_NT 10.0.22631
+15 verbose node v22.15.0
+16 verbose npm  v10.9.2
+17 verbose exit 0
+18 info ok
