@@ -4,17 +4,13 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import GroupAdmin as DjangoGroupAdmin
 from .models import CustomUser
-from import_export.admin import ImportExportModelAdmin
-from .resources import CustomUserResource
 
 @admin.register(CustomUser)
-class CustomUserAdmin(ImportExportModelAdmin, DjangoUserAdmin):
-    """Add additional fields to user admin page with import/export functionality."""
-    resource_class = CustomUserResource  # 指定资源类
-    
+class CustomUserAdmin(DjangoUserAdmin):
+    """Add additional fields to user admin page."""
     fieldsets = (
         (None, {"fields": ("username", "password")}),
-        (_("Personal info"), {"fields": ("name", "phone_number")}),
+        (_("Personal info"), {"fields": ("name", "email", "device", "phone_number", "gender", "exp_id", "exp_title", "exp_state")}),
         (
             _("Permissions"),
             {
@@ -29,9 +25,7 @@ class CustomUserAdmin(ImportExportModelAdmin, DjangoUserAdmin):
         ),
         (_("Important dates"), {"fields": ("last_login", "date_joined")}),
     )
-    list_display = ("username", "name","role","grade","major_class","phone_number","email")
-    list_editable = ("role","grade","major_class","phone_number","email",)
-    search_fields = ("name",)  # 新增姓名筛查字段
+    list_display = ("username", "email")
     actions = ['delete_selected']  # Ensure bulk delete is enabled
 
 class GroupProxy(Group):
